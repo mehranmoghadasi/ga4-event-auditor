@@ -1,6 +1,6 @@
 # ga4audit — GA4 Event Auditor
 
-[![Tests](https://img.shields.io/badge/tests-10%20passing-brightgreen?logo=pytest&logoColor=white)](tests/test_audit.py)
+[![CI](https://github.com/mehranmoghadasi/ga4-event-auditor/actions/workflows/python-app.yml/badge.svg)](https://github.com/mehranmoghadasi/ga4-event-auditor/actions/workflows/python-app.yml)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB?logo=python&logoColor=white)](https://python.org)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Core deps](https://img.shields.io/badge/core%20dependencies-none-06B6D4)](pyproject.toml)
@@ -87,7 +87,7 @@ flowchart LR
 
 - Python 3.10+, stdlib only for export/demo mode
 - Optional: `google-analytics-data`, `google-auth` (`pip install "ga4audit[api]"`)
-- Testing: `pytest`; lint: `ruff`
+- Testing: `pytest`; lint: `ruff`; CI: GitHub Actions on Python 3.10 and 3.12
 
 ## Installation
 
@@ -183,6 +183,7 @@ ga4-event-auditor/
 │   └── cli.py
 ├── tests/            # pytest suite + fixtures
 ├── examples/         # tracking plan + BigQuery-shaped export
+├── .github/workflows/python-app.yml
 └── pyproject.toml
 ```
 
