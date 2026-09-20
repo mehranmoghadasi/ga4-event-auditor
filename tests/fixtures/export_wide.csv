@@ -1,0 +1,4 @@
+event_name,event_count,currency,value,items
+add_to_cart,300,CAD,59,[...]
+add_to_cart,100,,59,[...]
+view_item,20,,,[...]

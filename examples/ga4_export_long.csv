@@ -1,0 +1,15 @@
+event_date,event_timestamp,user_pseudo_id,event_name,event_params_key,event_params_value_string_value,event_params_value_int_value,event_params_value_double_value
+20260915,1757900000000001,u1,purchase,transaction_id,T-1001,,
+20260915,1757900000000001,u1,purchase,value,,,129.5
+20260915,1757900000000001,u1,purchase,currency,CAD,,
+20260915,1757900000000001,u1,purchase,items,[...],,
+20260915,1757900000000002,u2,purchase,transaction_id,T-1002,,
+20260915,1757900000000002,u2,purchase,value,,,59
+20260915,1757900000000002,u2,purchase,items,[...],,
+20260915,1757900000000003,u3,add_to_cart,currency,CAD,,
+20260915,1757900000000003,u3,add_to_cart,value,,,59
+20260915,1757900000000003,u3,add_to_cart,items,[...],,
+20260915,1757900000000004,u4,begin_checkout,value,,,59
+20260915,1757900000000005,u5,Generate_Lead,form_id,contact,,
+20260915,1757900000000006,u6,page_view,page_location,https://example.com/,,
+20260915,1757900000000007,u7,checkout_start,value,,,59

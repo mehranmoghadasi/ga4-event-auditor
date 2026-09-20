@@ -1,0 +1,10 @@
+{
+  "property_id": "123456789",
+  "events": [
+    { "event_name": "purchase", "required_parameters": ["transaction_id", "value", "currency", "items"], "optional_parameters": ["coupon"], "expected_minimum_count": 50 },
+    { "event_name": "add_to_cart", "required_parameters": ["currency", "value", "items"], "expected_minimum_count": 200 },
+    { "event_name": "begin_checkout", "required_parameters": ["currency", "value"], "expected_minimum_count": 100 },
+    { "event_name": "generate_lead", "required_parameters": ["form_id", "form_name"], "optional_parameters": ["page_location"], "expected_minimum_count": 20 },
+    { "event_name": "view_item", "required_parameters": ["items"], "expected_minimum_count": 500 }
+  ]
+}

@@ -1,0 +1,3 @@
+event_name,required_parameters,optional_parameters,expected_minimum_count
+purchase,"transaction_id,value,currency",coupon,1
+add_to_cart,currency;value,,5
