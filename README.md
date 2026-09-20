@@ -40,9 +40,9 @@ GA4 implementations break silently. A GTM container gets republished, a CMS upda
 
 ## The Solution
 
-`ga4audit` compares observed events with a tracking plan and reports four things per event: is it firing, is it firing *enough*, are its required parameters populated (with a coverage percentage, not a yes/no), and is anything firing that shouldn't be. It replaces two earlier single-file tools:
+`ga4audit` compares observed events with a tracking plan and reports four things per event: is it firing, is it firing *enough*, are its required parameters populated (with a coverage percentage, not a yes/no), and is anything firing that shouldn't be. It replaces two earlier single-file tools (both retired):
 
-| Capability | v1 `ga4-event-auditor` (Python) | `ga4-event-tracking-auditor` (Node) | **ga4audit v2** |
+| Capability | v1 of this repo (Python, API-only) | former Node export-only auditor | **ga4audit v2** |
 |---|---|---|---|
 | Source | GA4 Data API only | BigQuery CSV only | **API, BigQuery long/wide CSV, or demo** |
 | Parameter checks | hard-coded demo | present/absent | **coverage % per parameter; API "unverifiable" state** |
@@ -54,7 +54,7 @@ GA4 implementations break silently. A GTM container gets republished, a CMS upda
 
 ## Features
 
-- One tracking plan format for both sources — accepts `name` **or** `event_name`, JSON **or** CSV, so plans from either predecessor load unchanged
+- One tracking plan format for both sources — accepts `name` **or** `event_name`, JSON **or** CSV, so plans written for either predecessor load unchanged
 - BigQuery flat export (`UNNEST(event_params)` long format) parsed into real per-occurrence parameter coverage, using `event_timestamp` + `user_pseudo_id` to identify an event
 - Wide-format exports (DebugView / GTM preview / spreadsheets) with an optional `event_count` column
 - GA4 Data API mode queries `customEvent:<param>` dimensions per required parameter; parameters that are not registered as custom dimensions are reported as *unverifiable* instead of being faked (v1 silently hard-coded this)
@@ -161,7 +161,6 @@ ga4audit --plan examples/tracking_plan.json --source demo
 
 - [gsc-coverage-monitor](https://github.com/mehranmoghadasi/gsc-coverage-monitor) — the Search Console counterpart: catches indexing regressions the same way this catches tracking regressions
 - [agency-report-builder](https://github.com/mehranmoghadasi/agency-report-builder) — feed `audit_report.json` in as a data-quality section
-- Superseded: [ga4-event-tracking-auditor](https://github.com/mehranmoghadasi/ga4-event-tracking-auditor) — its BigQuery parsing, ghost detection, and minimum-volume checks now live here
 
 ## Roadmap
 
